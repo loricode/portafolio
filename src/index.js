@@ -8,8 +8,11 @@ const app = express();
 
 app.set('port', process.env.PORT || 4000 );
 
+app.set("view options", {layout: false});
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
-   res.send('Inicio del portafolio');
+   res.render('index.html');
 });
 
 app.listen(app.get('port'), () => {
