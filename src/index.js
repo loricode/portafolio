@@ -11,10 +11,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 app.set('port', process.env.PORT || 4000 );
 
 app.set("view options", {layout: false});
-app.use(express.static(join(__dirname + '/public')));
+app.use(express.static(join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-   console.log(__dirname, dirname)
    res.render('index.html');
 });
 
